@@ -79,5 +79,11 @@ Características:
 </script>
 <script type="module" src="js/main.js"></script>
 <script type="module" src="js/asciibox.js"></script>
+<script>
+    const link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "styles.css?v=" + Date.now();
+    document.head.appendChild(link);
+</script>
 </body>
 </html>
