@@ -9,6 +9,7 @@ html, body {
 	font-family: monospace;
 	cursor: url('cursor.svg') 0 0, auto;
 	background-color: #0E0E0E;
+	color: #686E7A;
 }
 
 h1 {
@@ -116,4 +117,5 @@ a:hover {text-decoration: underline;}
 	#viewer-container {
 		height: 400px;
 	}
+
 }
