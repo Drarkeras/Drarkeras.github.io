@@ -58,10 +58,13 @@ button:hover {
 	border: 1px solid #555;
 	cursor: pointer;
 	border-radius: 5px;
+	color: #686E7A;
 }
 
 .Btn:hover {
 	background: #333;
+	text-decoration: underline;
+	color: #686E7A;
 }
 
 a {text-decoration: none; color: #686E7A;}
