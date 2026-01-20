@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio 3D</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+<h1 class="ascii">
+                                          ▒█▒
+   ▒▓███████                              ░▓█▒░     ███
+ ████████████                             ▒███▓░  ████▓
+████▓▓▓▒▓▒▒███      ░░░░   █████░         ▓▒▓██▓▓████▓▓    ██████▓   ░▒▓███         ░▓████▓▓░
+████▓▒░░░░░▓▓███ ░░████▒██████████▒ ▒▓▓████▓▓█████████░  ░▓████████▓▒▒▓███░▒▓██    ▓████████▒▓
+ █████▓    ▓██████████▓▓▓██████████▓█████▓▒▓████████▓ ▓▒▓████▓▒ ███▓█████▓▒█████▒░ ▒████▓▒░
+  █████▓   ████████▓▓▓▒▒▓████▓▓▓▓██▒▓███▓▓▓ ▒▓██████  ▓▒▒▓███████▓▒░▒███▓▓██▓▒ ██▓  ▒▓████▓▒
+   ▓████▓   ███▒████▓    ████▒░ ████▒█████▒ ▓▓████▓███  ▒▓█████████▒▒███░▒▓████████▒▒▓▓█████▒
+   ▒▒▓███▓ ████▒█████    ▓███████████▒████▓▒ ▒▓███▓▓▓██░ ▒▒▓▓▓█████▓ ▓▓█ ░░▒▓▓▓▓▓███▓██████▓░
+    ▒▒▓███████▓▒▓████    ▒▓▓██████▓▓██▓████▓ ▓███▓░▒▓▓▓░▒   ▒▒▒▒▒    ▓▓▒        ▓▓▒▒ ░▒▓▓▓▓▒
+     ▒▓█████▓▓▒ ▒▓██      ▒▒▒▓▓▓▒▒ ▓▓▓▒▓██▓▒  ████░  ▓▓
+     ▒▓███▓▒▒▒  ▒▓▓▓         ▒▒▒    ▒▓░░▒▒    ▒███▒
+         ▒▒      ▒▒▒
+</h1>
+    <h2>Generalista 3D / Programador</h2>
+        <nav class="tree-nav" aria-label="Secciones del portfolio">
+  <pre>
+/home/portfolio
+  ├── <a href="#tuktuk">tuktuk</a>
+  ├── <a href="#tabla">tabla</a>
+  ├── <a href="#formulario">formulario</a>
+  └── <a href="#multimedia">multimedia</a>
+  </pre>
+</nav>
+    </header>
+<section id="tuktuk">
+<div id="texto-lateral">
+     <pre>$ cat tuktuk_info.txt
+
+Fictional TukTuk - Asset 3D estilizado
+--------------------------------------
+
+Modelo de vehículo ficticio inspirado en modelos genéricos de tuktuk.
+Creado como un experimento personal para explorar una estética retro con texturas tipo pixel art.
+
+Características:
+<ul><li>Geometría low-poly optimizada</li><li>Interior modelado</li><li>Texturas estilo pixel art</li><li>Pensado para videojuegos y escenas estilizadas</li><li>Modelado desde cero</li></ul>$ _
+</pre>
+    </div>
+    <div id="viewer-container"> 
+<div>
+<pre class="ascii-box">
+3D VIEWPORT
+</pre>
+<pre class="typing">
+> Loading model...
+> Rendering...
+> Ready.
+</pre>
+        <div id="viewer"></div>
+        <div id="ui">
+            <a id="wireframeBtn" class="Btn">[ wireframe --toggle ]</a>
+<a class="Btn" href="https://skfb.ly/pFDqD">[ sketchfab --goToUrl ]</a>
+        </div>
+    </div>
+</div>
+</section>
+<footer>
+        <p>&lt;!-- Created by Drarkeras --&gt;</p>
+    </footer>
+
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+<script type="module" src="js/main.js"></script>
+<script type="module" src="js/asciibox.js"></script>
+</body>
+</html>

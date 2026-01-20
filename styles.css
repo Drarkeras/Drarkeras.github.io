@@ -1,0 +1,119 @@
+:root {
+	--bg: #111;
+	--text: #686E7A;
+	--accent: #FF0055;
+	--dim: #444;
+}
+
+html, body {
+	font-family: monospace;
+	cursor: url('cursor.svg') 0 0, auto;
+	background-color: #0E0E0E;
+}
+
+h1 {
+	font-size: 1.5em;
+}
+
+.ascii {
+      white-space: pre; 
+      line-height: 1;
+}
+
+header{
+	margin: 1.8rem 0;
+	padding: 1rem;
+}
+
+footer{
+	margin: 1.8rem 0;
+	padding: 1rem;
+}
+
+button {
+	background: #1e1e1e;
+	color: #eaeaea;
+	border: 1px solid #333;
+	padding: 8px 12px;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #2a2a2a;
+}
+
+canvas {
+	display: block;
+}
+
+#tuktuk {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+#viewer-container {
+    flex: 1;
+    height: 600px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#viewer {
+    width: 100%;
+    height: 100%;
+}
+
+#ui {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+a {text-decoration: none;}
+a:hover {text-decoration: underline;}
+
+.Btn{
+    padding: 10px 15px;
+    background: #111;
+    border: 1px solid #555;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Btn:hover {
+    background: #333;
+}
+
+#texto-lateral {
+    flex: 1;
+    padding: 20px;
+    color: #eee;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111;
+  border-left: 2px solid #444;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #686E7A;
+  border: 2px solid #444;
+  box-shadow: inset 0 0 0 2px #111;
+}
+
+@media (max-width: 900px) {
+    	#tuktuk {
+        	flex-direction: column;
+    	}
+
+	#viewer-container {
+		height: 400px;
+	}
+}
