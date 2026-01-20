@@ -1,34 +1,43 @@
-:root {
-	--bg: #111;
-	--text: #686E7A;
-	--accent: #FF0055;
-	--dim: #444;
-}
-
 html, body {
 	font-family: monospace;
 	cursor: url('cursor.svg') 0 0, auto;
 	background-color: #0E0E0E;
-	color: #686E7A;
 }
 
 h1 {
 	font-size: 1.5em;
+	color: #686E7A;
 }
 
+pre {color: #686E7A;}
+
 .ascii {
-      white-space: pre; 
-      line-height: 1;
+	white-space: pre; 
+	line-height: 1;
+	color: #686E7A;
+	display: block;
+	margin: 0 auto;
 }
 
 header{
 	margin: 1.8rem 0;
 	padding: 1rem;
+	color: #686E7A;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: left;
+	margin: 0 auto;
 }
 
 footer{
 	margin: 1.8rem 0;
 	padding: 1rem;
+	color: #686E7A;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 auto;
 }
 
 button {
@@ -42,6 +51,21 @@ button {
 button:hover {
 	background: #2a2a2a;
 }
+
+.Btn{
+	padding: 10px 15px;
+	background: #111;
+	border: 1px solid #555;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.Btn:hover {
+	background: #333;
+}
+
+a {text-decoration: none; color: #686E7A;}
+a:hover {text-decoration: underline; color: #686E7A;}
 
 canvas {
 	display: block;
@@ -71,20 +95,6 @@ canvas {
     bottom: 20px;
     right: 20px;
     z-index: 10;
-}
-a {text-decoration: none;}
-a:hover {text-decoration: underline;}
-
-.Btn{
-    padding: 10px 15px;
-    background: #111;
-    border: 1px solid #555;
-    cursor: pointer;
-    border-radius: 5px;
-}
-
-.Btn:hover {
-    background: #333;
 }
 
 #texto-lateral {
@@ -117,5 +127,4 @@ a:hover {text-decoration: underline;}
 	#viewer-container {
 		height: 400px;
 	}
-
 }
