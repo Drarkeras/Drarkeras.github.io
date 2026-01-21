@@ -83,14 +83,12 @@ requestAnimationFrame(() => {
   camera.updateProjectionMatrix();
   renderer.setSize(width, height);
 });
-    window.addEventListener('resize', () => {
-  const width = viewer.clientWidth;
-  const height = viewer.clientHeight;
+window.addEventListener('resize', () => {
+		const width = viewer.clientWidth;
+		const height = viewer.clientHeight;
 
-  camera.aspect = width / height;
-  camera.updateProjectionMatrix();
-  renderer.setSize(width, height);
+		camera.aspect = width / height;
+		camera.updateProjectionMatrix();
+		renderer.setSize(width, height);
 });
-
-
     animate();

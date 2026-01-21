@@ -1,11 +1,15 @@
 function actualizarMarcos() {
     document.querySelectorAll(".ascii-box").forEach(pre => {
-        const lineasOriginales = pre.textContent.trim().split("\n");
+        if (!pre.dataset.original) {
+            pre.dataset.original = pre.textContent.trim();
+        }
+
+        const lineasOriginales = pre.dataset.original.split("\n");
 
         const span = document.createElement("span");
         span.style.visibility = "hidden";
         span.style.whiteSpace = "pre";
-        span.style.fontFamily = "monospace";
+        span.style.fontFamily = getComputedStyle(pre).fontFamily;
         span.textContent = "X";
         document.body.appendChild(span);
 
@@ -13,8 +17,9 @@ function actualizarMarcos() {
         document.body.removeChild(span);
 
         const anchoPx = pre.clientWidth;
-        const chars = Math.floor(anchoPx / charWidth);
+        if (anchoPx === 0) return;
 
+        const chars = Math.floor(anchoPx / charWidth);
         const interior = Math.max(chars - 2, 10);
 
         const lineaSup = "┌" + "─".repeat(interior) + "┐";
@@ -33,7 +38,4 @@ function actualizarMarcos() {
 }
 
 window.addEventListener("load", actualizarMarcos);
-window.addEventListener("resize");
-window.addEventListener('resize', () => {
-  actualizarMarcos()
-});
+window.addEventListener("resize", actualizarMarcos);
