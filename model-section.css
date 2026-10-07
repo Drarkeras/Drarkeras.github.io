@@ -1,0 +1,186 @@
+/* ==========================================================================
+ *  MÓDULO PLUG & PLAY: 3D SHOWCASE (CON CONTROLES Y MODAL)
+ *  ========================================================================== */
+.model-module-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 100%;
+}
+
+/* --- Layout 2 Columnas --- */
+.model-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    padding: 24px;
+}
+
+.model-col-left {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #090a0c;
+    border: 1px solid var(--card-border);
+}
+
+.inline-model-viewer {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* --- Controles Flotantes sobre el Modelo --- */
+.viewer-controls {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(13, 15, 18, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 6px 12px;
+    border-radius: 50px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    z-index: 10;
+    max-width: 95%;
+}
+
+.viewer-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-muted, #a0a5b5);
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.viewer-btn:hover, .viewer-btn.active {
+    background: var(--accent-yellow, #ffd100);
+    color: #121316;
+}
+
+/* Botón de ampliar en el visor */
+.viewer-btn.expand-btn {
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin-left: 4px;
+    padding-left: 12px;
+    color: var(--accent-cyan, #06b6d4);
+}
+
+.viewer-btn.expand-btn:hover {
+    background: var(--accent-cyan, #06b6d4);
+    color: #121316;
+}
+
+/* --- Columna Derecha (Texto) --- */
+.model-col-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.model-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 2.2rem;
+    color: var(--text-color);
+    margin-bottom: 16px;
+}
+
+.model-desc {
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* --- Carrusel de Tarjetas --- */
+.model-carousel {
+    display: flex;
+    justify-content: center; /* Centra las imágenes cuando hay pocas */
+    justify-content: safe center; /* Previene que se corten a la izquierda si sobrepasan el ancho */
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 24px;
+    padding-bottom: 20px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-yellow) var(--card-bg);
+}
+
+.model-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+.model-carousel::-webkit-scrollbar-track {
+    background: var(--card-bg);
+    border-radius: 10px;
+}
+.model-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--accent-yellow);
+    border-radius: 10px;
+}
+
+.model-card {
+    flex: 0 0 300px;
+    scroll-snap-align: start;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: var(--transition);
+    cursor: pointer; /* <--- Añadido para indicar que se puede clicar */
+}
+
+.model-card:hover {
+    border-color: var(--accent-violet);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(6, 182, 212, 0.1);
+}
+
+.model-card-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.model-card-title {
+    padding: 16px;
+    font-family: 'Space Grotesk', sans-serif;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+/* --- Lightbox / Modal 3D Grande --- */
+.lightbox-3d-content {
+    position: relative;
+    width: 90vw;
+    height: 85vh;
+    background: #090a0c;
+    border-radius: var(--border-radius);
+    border: 1px solid var(--card-border);
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.lightbox-3d-content .viewer-controls {
+    bottom: 25px;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .model-columns { grid-template-columns: 1fr; }
+    .model-col-left { height: 350px; }
+    .lightbox-3d-content { width: 95vw; height: 80vh; }
+}
