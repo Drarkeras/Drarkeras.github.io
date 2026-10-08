@@ -22,17 +22,19 @@ window.addEventListener('scroll', () => {
 });
 
 // Control de Tema Claro / Oscuro
-themeToggle.addEventListener('click', () => {
-    const currentTheme = html.getAttribute('data-theme');
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = html.getAttribute('data-theme');
 
-    if (currentTheme === 'light') {
-        html.removeAttribute('data-theme');
-        themeToggle.textContent = '🌙';
-    } else {
-        html.setAttribute('data-theme', 'light');
-        themeToggle.textContent = '☀️';
-    }
-});
+        if (currentTheme === 'light') {
+            html.removeAttribute('data-theme');
+            themeToggle.textContent = '🌙';
+        } else {
+            html.setAttribute('data-theme', 'light');
+            themeToggle.textContent = '☀️';
+        }
+    });
+}
 
 // Copiar correo electrónico y mostrar Toast
 function copyEmail() {

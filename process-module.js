@@ -61,10 +61,27 @@ function renderProcessModule(container, data) {
             el.className = 'process-image-item process-video-item';
             el.dataset.group = imgData.groupId;
             el.dataset.index = index; // Para el modal
+            el.preload = 'auto';
             el.autoplay = true;
             el.loop = true;
             el.muted = true;
             el.playsInline = true;
+            el.setAttribute('playsinline', 'true');
+            el.setAttribute('webkit-playsinline', 'true');
+            el.setAttribute('autoplay', 'true');
+            el.setAttribute('muted', 'true');
+            el.setAttribute('loop', 'true');
+            el.setAttribute('aria-label', imgData.alt || 'Video de proceso');
+            el.disablePictureInPicture = true;
+            el.controls = false;
+            const tryPlayVideo = () => {
+                el.muted = true;
+                el.play().catch(() => {
+                    setTimeout(() => el.play().catch(() => {}), 250);
+                });
+            };
+            el.addEventListener('loadeddata', tryPlayVideo, { once: true });
+            el.addEventListener('canplay', tryPlayVideo, { once: true });
             // Al clicar el video, abrimos el lightbox para reproducirlo en grande
             el.addEventListener('click', () => {
                 openLightbox(data.images, index);
@@ -251,12 +268,21 @@ function updateLightboxImage() {
         const v = document.createElement('video');
         v.src = data.src;
         v.alt = data.alt || '';
-        v.controls = true;
+        v.controls = false;
         v.autoplay = true;
         v.loop = true;
         v.muted = true;
         v.playsInline = true;
+        v.preload = 'auto';
+        v.setAttribute('playsinline', 'true');
+        v.setAttribute('webkit-playsinline', 'true');
+        v.setAttribute('autoplay', 'true');
+        v.setAttribute('muted', 'true');
+        v.setAttribute('loop', 'true');
         v.className = 'lightbox-video';
+        v.addEventListener('loadeddata', () => {
+            v.play().catch(() => {});
+        }, { once: true });
         lightboxMedia.appendChild(v);
     } else {
         const img = document.createElement('img');
