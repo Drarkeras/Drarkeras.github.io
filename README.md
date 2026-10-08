@@ -17,7 +17,6 @@ La idea es tener una página simple, directa y fácil de navegar para presentar 
 Puedes servirlo localmente:
 
 ```bash
-cd "/home/drarkeras/Escritorio/portfolio final 1"
 python3 -m http.server 8000
 ```
 
