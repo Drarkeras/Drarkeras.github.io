@@ -1,0 +1,22 @@
+{
+  "model": {
+    "path": "./resources/tuktuk/tuktukDrarkeras.glb",
+    "title": "Tuk-Tuk — Game Asset",
+    "description": "Este modelo nació como parte de un proyecto académico en equipo: un prototipo de simulador de conducción con humor desarrollado en Unity. El objetivo principal era crear un vehículo con personalidad propia que fuera perfectamente reconocible. Todo el proceso de modelado 3D y texturizado se realizó íntegramente en Blender:<br><br>Interior detallado: Salpicadero, manillar y habitáculo modelados para tomas en primera/tercera persona.",
+    "sketchfabUrl": "https://skfb.ly/pNFGD"
+  },
+  "carousel": [
+    {
+      "image": "./resources/tuktuk/DifusseMap.png",
+      "title": "Diffuse Map (512x512)"
+    },
+    {
+      "image": "./resources/tuktuk/roughnessMap.png",
+      "title": "Roughness Map (512x512)"
+    },
+    {
+      "image": "./resources/tuktuk/uv.png",
+      "title": "UVs (16k triángulos)"
+    }
+  ]
+}
